@@ -1,5 +1,6 @@
 from flask import Flask,render_template
 import os
+import data_manager
 
 app = Flask(__name__)
 app.secret_key = "bhafiow vnkahbdsejr/"
@@ -13,7 +14,7 @@ app.config["UPLOAD_FOLDER"] =UPLOAD_FOLDER
 @app.route("/")
 def main():
     getBooks = data_manager.get_books()
-    return render_template("home.html")
+    return render_template("home.html",books=getBooks)
 
 
 if __name__ == "__main__":

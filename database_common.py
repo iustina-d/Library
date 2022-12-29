@@ -34,7 +34,7 @@ def open_database():
     return connection
 
 
-def connection_handler():
+def connection_handler(function):
     def wrapper(*args,**kwargs):
         connection = open_database()
         dict_cur = connection.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
