@@ -12,6 +12,7 @@ app.config["UPLOAD_FOLDER"] =UPLOAD_FOLDER
 
 @app.route("/")
 def main():
+    getBooks = data_manager.get_books()
     return render_template("home.html")
 
 
