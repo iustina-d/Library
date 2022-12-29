@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {%block title%}Library{%endblock title%}
 {%block content%}
-<body>
-    <h1>Hello World!</h1>
-    {% for  book in books %}
-        <h3>{{ book.id }}</h3>
-        <h3>{{ book.book_name }}</h3>
-        <h3>{{ book.author_name }}</h3>
-        <h3>{{ book.items_number }}</h3>
-    {% endfor%}
+  <div class="hero-section">
+    <img src="../static/images/hero-s.jpg" class="hero-section-img"/>
+  </div>
+  <div class="cards">
+  </div>
 {% endblock %}
