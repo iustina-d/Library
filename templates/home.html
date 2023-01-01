@@ -2,8 +2,23 @@
 {%block title%}Library{%endblock title%}
 {%block content%}
   <div class="hero-section">
-    <img src="../static/images/hero-s.jpg" class="hero-section-img"/>
+    <img src="../static/images/hero-s_v1.png" class="hero-section-img"/>
   </div>
-  <div class="cards">
+  <div class="card-group">
+    {% for  book in books %}
+      <div class="card">
+        <img src="{{ url_for('static',filename=book.image)}}" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+        <div class="card-body">
+          <h5 class="card-title">Title:{{ book.book_name }}</h5>
+          <p class="card-author">
+            Author:{{ book.author_name }}
+          </p>
+          <p class="card-items">
+            <small class="text-muted"><h3>Items:{{ book.items_number }}</h3></small>
+          </p>
+        </div>
+      </div>
+    {% endfor%}
   </div>
+  
 {% endblock %}
